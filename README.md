@@ -22,7 +22,7 @@ Optional Arguments:
 
 ``` 
 $(...).expanda({
-    'autoExpand': '' // its all direct children in 'autoExpand'
+    'autoExpand': '' // Its all direct children in 'autoExpand'
                      // will be automatically executed expanda().
                      // Use comma as delimiter
 })
