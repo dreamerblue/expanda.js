@@ -8,6 +8,8 @@ Author: bLue
 
 Version: 1.0.1
 
+Demo: [https://dreamerblue.github.io/expanda.js/](https://dreamerblue.github.io/expanda.js/)
+
 ## Dependencies
 
 - [jQuery](https://jquery.com)
