@@ -1,13 +1,15 @@
 /*
 by bLue
-Version: 1.0.0
+Version: 1.0.1
 Link: https://github.com/dreamerblue/expanda.js
-Last Updated: 02/04/2017
+Last Updated: 07/19/2017
 */
 
 (function ($) {
 	$.fn.extend({
 		expandaSingle: function(options) {
+			if(this.hasClass("expanda"))
+				return this;
 			this.addClass("expanda");
 			this.hover(function() {
 				$(this).children("a").addClass("expanda-hover");
@@ -25,6 +27,9 @@ Last Updated: 02/04/2017
 				tmp.html('<span></span>');
 				tmp.hide();
 				$("body").append(tmp);
+				tmp.children("span").click(function(e) {
+					e.stopPropagation();
+				})
 				tmp.children("span").trigger("click");
 				tmp.remove();
 			});
@@ -36,7 +41,7 @@ Last Updated: 02/04/2017
 			};
 			var settings = $.extend({}, defaults, options);
 			if(settings.autoExpand != defaults.autoExpand) {
-				var expandList = settings.autoExpand.split(' ');
+				var expandList = settings.autoExpand.split(',');
 				for(i=0; i<expandList.length; ++i) {
 					$(expandList[i]).each(function() {
 						if($(this).children("a").length > 0)
@@ -54,5 +59,5 @@ Last Updated: 02/04/2017
 $(function() {
 	var css = '<style>.expanda{cursor:pointer}.expanda-hover:focus,.expanda-hover:active,.expanda-hover:hover{outline:0}</style>';
 	$("head").append(css);
-	$(".expanda").expandaSingle();
+	$(".expanda-add").expandaSingle();
 });
