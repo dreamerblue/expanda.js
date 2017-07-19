@@ -22,12 +22,14 @@ Optional Arguments:
 
 ``` 
 $(...).expanda({
-	'autoExpand': '' // its all direct children in 'autoExpand' will automatically excute expanda(). Use comma as delimiter
+    'autoExpand': '' // its all direct children in 'autoExpand'
+                     // will be automatically executed expanda().
+                     // Use comma as delimiter
 })
 ```
 
 #### class="expanda-add"
 
-All HTML elememts with class `expanda-add` will be automatically expand.
+All HTML elememts with class `expanda-add` will be automatically executed expanda().
 
 	
