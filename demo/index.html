@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/expanda.min.js"></script>
+<title>expanda.js Demo</title>
+<style>
+h3, h4 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+a {
+	text-decoration: none;
+}
+a:hover, a:focus, a:active {
+	text-decoration: underline;
+}
+a:visited {
+	color: blue;
+}
+table {
+	border: 1px solid #000;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #000;
+	padding: 8px;
+}
+.container {
+	margin: 32px;
+}
+.text-center {
+	text-align: center;
+}
+.bg-gray {
+	background-color: #ddd;
+	padding: 16px;
+}
+#footer {
+	margin-top: 64px;
+}
+</style>
+</head>
+<body class="container">
+<div>
+	<h2 class="text-center">expanda.js Demo</h2>
+
+	<h4>A normal div</h4>
+	<div class="bg-gray">
+		<a href="#">An example link</a>
+	</div>
+
+	<h4>A div with expanda (activate with JS)</h4>
+	<div id="demo-1" class="bg-gray">
+		<a href="#">An example link (expanded to whole div)</a>
+	</div>
+
+	<h4>A div with expanda (activate with class)</h4>
+	<div id="demo-2" class="bg-gray expanda-add">
+		<a href="#">An example link (expanded to whole div)</a>
+	</div>
+
+	<h4>Effective demo in table (activate with JS argument 'autoExpand')</h4>
+	<div id="demo-3" class="bg-gray">
+		<table class="text-center">
+			<thead>
+				<tr>
+					<th>Column 1</th>
+					<th>Column 2</th>
+					<th><a href="#">Column 3 with link</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a href="#">link 1</a>
+					</td>
+					<td>
+						<a href="#">link 2</a>
+					</td>
+					<td>text</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="#">link 3</a>
+					</td>
+					<td>
+						<a href="#">link 4</a>
+					</td>
+					<td>
+						<a href="#">link 5</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div id="footer" class="text-center">
+		Copyright © 2017 <a href="https://github.com/dreamerblue">bLue</a>
+	</div>
+
+	<div id="github-fork">
+		<a href="https://github.com/dreamerblue/expanda.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+	</div>
+</div>
+<script>
+$(function() {
+	// expanda in demo-1
+	$("#demo-1").expanda();
+	// expanda in demo-3
+	$().expanda({
+		'autoExpand': 'th, td'
+	});
+});
+</script>
+</body>
+</html>
